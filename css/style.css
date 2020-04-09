@@ -301,13 +301,23 @@ header {
 }
 
 .services {
-    margin-bottom: 4em;
+    margin-bottom: 0;
 }
 
 .service {
     max-width: 500px;
     margin: 0 auto;
-    margin-bottom: 4em;
+    margin-bottom: 2em;
+}
+
+.service::after {
+    content: "";
+    display: block;
+    width: 5em;
+    height: 1px;
+    margin: 2em auto 1em;
+    background-color: var(--clr-light);
+    opacity: 0.25;
 }
 
 @media (min-width: 800px) {
