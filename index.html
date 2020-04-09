@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lilian's Bakery</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.bootcss.com/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div>
+
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="#home" class="nav__link">主页</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#services" class="nav__link">烘焙知识</a>
+                </li>
+                <li class="nav__item">
+
+                    <a class="nav__link" href="#about" class="nav__link">自我介绍</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#work" class="nav__link">我的作品</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- intro section -->
+    <section class="intro" id="home">
+        <h1 class="section__title section__title--intro">
+            <strong>琮琮</strong>の手作り
+        </h1>
+        <p class="section__subtitle section__subtitle--intro">烘焙爱好者</p>
+        <img class="intro__img" src="img/baking-bg-04.jpg" alt="baking pic">
+    </section>
+
+
+
+    <!-- list of services -->
+    <section class="my-services" id="services">
+        <h2 class="section__title section__title--services">烘焙知识</h2>
+        <div class="services">
+            <div class="service">
+                <h3>吐司面包</h3>
+                <p>吐司，是英文toast的音译，粤语（广东话）叫多士，实际上就是用长方形带盖或不带盖的烤听制作的听型面包。</p>
+                <p>用带盖烤听烤出的面包经切片后呈正方形，夹入火腿或蔬菜后即为三明治。用不带盖烤听烤出的面包为长方圆顶形，类似长方形大面包。</p>
+            </div>
+            <div class="service">
+                <h3>戚风蛋糕</h3>
+                <p>戚风蛋糕是一款甜点，属海绵蛋糕类型，制作原料主要有菜油、鸡蛋、糖、面粉、发粉等。适合添加巧克力、水果等配料。</p>
+                <p>由于菜油不像牛油（传统蛋糕都是用牛油的）那样容易打泡，因此需要靠把鸡蛋清打成泡沫状，来提供足够的空气以支撑蛋糕的体积。戚风蛋糕含足量的菜油和鸡蛋，因此质地非常的湿润。</p>
+            </div>
+            <div class="service">
+                <h3>披萨</h3>
+                <p>披萨是一种发源于意大利的食品，在全球颇受欢迎。比萨饼的通常做法是用发酵的圆面饼上面覆盖番茄酱、奶酪以及其他配料，并由烤炉烤制而成。</p>
+                <p>奶酪通常用莫萨里拉干酪，也有混用几种奶酪的形式，包括帕马森干酪、罗马乳酪（romano）、意大利乡村软酪（ricotta）或蒙特瑞·杰克干酪（Monterey Jack）、马苏里拉奶酪等。</p>
+            </div>
+        </div>
+
+        <a href="#work" class="btn">我的作品</a>
+    </section>
+
+    <!-- about me section -->
+    <section class="about-me" id="about">
+        <h2 class="section__title section__title--about">自我介绍</h2>
+        <p class="section__subtitle section__subtitle--about">唯美食与旅行不可负</p>
+
+        <div class="about-me__body">
+            <p><i class="fa fa-camera-retro"></i> 热爱旅行，足迹遍布北欧冰岛，挪威，欧洲大陆，太平洋各岛。</p>
+            <p><i class="fa fa-birthday-cake"></i> 热爱烘焙，无论是拉丝的吐司还是配料满溢的披萨，都是信手拈来。</p>
+            <p><i class="fa fa-handshake"></i> 希望与各位热爱旅行和烘焙的朋友们一起交流，共同进步。</p>
+        </div>
+
+        <img src="img/liliane-01.jpg" alt="" class="about-me__img">
+    </section>
+
+    <!-- work -->
+    <section class="my-work" id="work">
+        <h2 class="section__title section__title--work">我的作品集</h2>
+        <p class="section__subtitle section__subtitle--work"> A selection of my favorite works</p>
+        <div class="portfolio">
+            <a href="portfolio-item.html" class="portfolio__item">
+                <img src="img/toast-01.jpg" alt="my work 1" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/toast-02.jpg" alt="my work 2" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/toast-03.jpg" alt="my work 3" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/toast-04.jpg" alt="my work 4" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/chiffon-01.jpg" alt="my work 5" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/chiffon-02.jpg" alt="my work 6" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/pizza-01.jpg" alt="my work 7" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/pizza-02.jpg" alt="my work 8" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/pizza-03.jpg" alt="my work 9" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/chocolate-pudding-01.png" alt="my work 10" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/cookie-01.jpg" alt="my work 11" class="portfolio__img">
+            </a>
+            <a href="#" class="portfolio__item">
+                <img src="img/quatre-quarts-01.jpg" alt="my work 12" class="portfolio__img">
+            </a>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="footer">
+        <a href="mailto:liangcong224@hotmail.com" class="footer__link">liangcong224@hotmail.com</a>
+        <ul class="social-list">
+            <li class="social-list__item">
+                <a href="https://weibo.com" target="_blank" class="social-list__link"><i
+                        class="fab fa-weibo"></i></a>
+            </li>
+            <li class="social-list__item">
+                <a href="https://weixin.qq.com" target="_blank" class="social-list__link"><i
+                        class="fab fa-weixin"></i></a>
+            </li>
+            <li class="social-list__item">
+                <a href="https://facebook.com" target="_blank" class="social-list__link"><i
+                        class="fab fa-facebook"></i></a>
+            </li>
+            <li class="social-list__item">
+                <a href="https://twitter.com" target="_blank" class="social-list__link"><i
+                        class="fab fa-twitter"></i></a>
+            </li>
+        </ul>
+    </footer>
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
