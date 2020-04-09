@@ -307,6 +307,7 @@ header {
 .service {
     max-width: 500px;
     margin: 0 auto;
+    margin-bottom: 4em;
 }
 
 @media (min-width: 800px) {
@@ -388,6 +389,7 @@ header {
 .portfolio__item {
     background-color: var(--clr-accent);
     overflow: hidden;
+    margin: 10px;
 }
 
 .portfolio__item:focus {
