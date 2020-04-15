@@ -107,6 +107,7 @@ h3 { font-size: var(--fs-h3) }
 
 .section__title--intro strong {
     display: block;
+    margin-bottom: .25em;
 }
 
 .section__subtitle {
@@ -130,6 +131,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    padding-bottom: 0;
 }
 
 .logo {
@@ -241,7 +243,7 @@ header {
 .intro__img { box-shadow: var(--bs);}
 
 .section__subtitle--intro {
-    display: inline-block;
+    
 }
 
 @media (min-width: 600px) {
@@ -419,6 +421,15 @@ header {
     opacity: 0.75;
 }
 
+.portfolio__more {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    color: var(--clr-light);
+    padding: 1em 0;
+    font-size: var(--fs-h3);
+}
+
 /* footer */
 .footer {
     background-color: #111;
@@ -485,7 +496,6 @@ header {
     max-width: 1000px;
     padding: 0 2em 2em;
     margin: 0 auto;
-    position: relative;
     text-align: center;
 }
 
@@ -498,4 +508,5 @@ header {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    text-align: justify;
 }
