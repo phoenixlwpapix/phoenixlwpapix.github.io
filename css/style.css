@@ -7,15 +7,16 @@
 /* Custom Properties, update these for your own design */
 
 :root {
-    --ff-primary: 'Microsoft Yahei', sans-serif;
-    --ff-secondary: 'Microsoft Yahei', monospace;
+    --ff-primary: 'Poppins', sans-serif;
+    --ff-secondary: 'Poppins', sans-serif;
     
     --fw-reg: 300;
     --fw-bold: 900;
-    
-    --clr-light: #fff;
-    --clr-dark: #303030;
-    --clr-accent: #ff7e1a;
+
+    --clr-light: #f4f4f4;
+    --clr-dark: #2c2c2c;
+    --clr-primary: #6c63ff;
+    --clr-accent: #ffb6c1;
     
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -48,10 +49,14 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.02) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0,0,0,0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    padding-top: 5em;
 }
 
 section {
-    padding: 4em 2em;
+    padding: 5em 2em;
 }
 
 img {
@@ -62,25 +67,28 @@ img {
 strong { font-weight: var(--fw-bold) }
 
 :focus {
-    outline: 3px solid var(--clr-accent);
+    outline: 3px solid var(--clr-primary);
     outline-offset: 3px;
 }
 
 .btn {
     display: inline-block;
-    padding: .5em 2.5em;
+    padding: .75em 2.5em;
     color: var(--clr-light);
-    background-color: var(--clr-accent);
+    background-color: var(--clr-primary);
     text-decoration: none;
     cursor: pointer;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     text-transform: uppercase;
     font-weight: var(--fw-bold);
-    transition: transform 200ms ease-in-out ;
+    border-radius: 100px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
-    transform: scale(1.2);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 /* Typography */
@@ -120,7 +128,7 @@ h3 { font-size: var(--fs-h3) }
     background: var(--clr-accent);
     padding: .25em 1em;
     font-family: var(--ff-secondary);
-    color: var(--clr-light);
+    color: var(--clr-dark);
     margin-bottom: 1em;
 }
 
@@ -132,6 +140,12 @@ header {
     justify-content: space-between;
     padding: 1em;
     padding-bottom: 0;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(244, 244, 244, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100;
 }
 
 .logo {
@@ -140,16 +154,18 @@ header {
 
 .nav {
     position: fixed;
-    background-color: var(--clr-dark);
+    background-color: rgba(44, 44, 44, 0.75);
     color: var(--clr-light);
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 100;
-
     transform: translateX(100%);
     transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav__list {
@@ -171,7 +187,7 @@ header {
 }
 
 .nav__link:hover {
-    color: var(--clr-accent);
+    color: var(--clr-primary);
 }
 
 .nav-toggle {
@@ -214,7 +230,7 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    background: var(--clr-accent);
+    background: var(--clr-primary);
     width: 2em;
     height: 3px;
     border-radius: 1em;
@@ -288,7 +304,7 @@ header {
 }
 
 .section__title--services {
-    color: var(--clr-accent);
+    color: var(--clr-primary);
     position: relative;
 }
 
@@ -309,18 +325,9 @@ header {
 .service {
     max-width: 500px;
     margin: 0 auto;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 }
 
-.service::after {
-    content: "";
-    display: block;
-    width: 5em;
-    height: 1px;
-    margin: 2em auto 1em;
-    background-color: var(--clr-light);
-    opacity: 0.25;
-}
 
 @media (min-width: 800px) {
     .services {
@@ -399,7 +406,7 @@ header {
 }
 
 .portfolio__item {
-    background-color: var(--clr-accent);
+    background-color: var(--clr-primary);
     overflow: hidden;
     margin: 10px;
 }
@@ -411,14 +418,14 @@ header {
 
 .portfolio__img {
     transition: 
-        transform 750ms cubic-bezier(.5, 0, .5, 1),
+        transform 500ms cubic-bezier(.5, 0, .5, 1),
         opacity 250ms linear;
 }
 
 .portfolio__img:hover,
 .portfolio__item:focus .portfolio__img {
-    transform: scale(1.2);
-    opacity: 0.75;
+    transform: scale(1.1);
+    opacity: 0.8;
 }
 
 .portfolio__more {
@@ -433,7 +440,7 @@ header {
 /* footer */
 .footer {
     background-color: #111;
-    color: var(--clr-accent);
+    color: var(--clr-primary);
     text-align: center;
     padding: 2.5em 0;
     font-size: var(--fs-h3);
