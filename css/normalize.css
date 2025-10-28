@@ -9,16 +9,11 @@ body {
 }
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 
-
 html {
   font-family: sans-serif;
-
   line-height: 1.15;
-
   -ms-text-size-adjust: 100%;
-
   -webkit-text-size-adjust: 100%;
-
 }
 
 article,
@@ -35,11 +30,9 @@ h1 {
   margin: 0.67em 0;
 }
 
-
 figcaption,
 figure,
 main {
-
   display: block;
 }
 
@@ -53,22 +46,18 @@ hr {
   height: 0;
 
   overflow: visible;
-
 }
 
 pre {
   font-family: monospace, monospace;
 
   font-size: 1em;
-
 }
-
 
 a {
   background-color: transparent;
 
   -webkit-text-decoration-skip: objects;
-
 }
 
 a:active,
@@ -82,7 +71,6 @@ abbr[title] {
   text-decoration: underline;
 
   text-decoration: underline dotted;
-
 }
 
 b,
@@ -101,7 +89,6 @@ samp {
   font-family: monospace, monospace;
 
   font-size: 1em;
-
 }
 
 dfn {
@@ -131,7 +118,6 @@ sup {
   top: -0.5em;
 }
 
-
 audio,
 video {
   display: inline-block;
@@ -150,7 +136,6 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-
 button,
 input,
 optgroup,
@@ -163,18 +148,15 @@ textarea {
   line-height: 1.15;
 
   margin: 0;
-
 }
 
 button,
 input {
-
   overflow: visible;
 }
 
 button,
 select {
-
   text-transform: none;
 }
 
@@ -183,7 +165,6 @@ html [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
-
 }
 
 button::-moz-focus-inner,
@@ -219,14 +200,12 @@ legend {
   padding: 0;
 
   white-space: normal;
-
 }
 
 progress {
   display: inline-block;
 
   vertical-align: baseline;
-
 }
 
 textarea {
@@ -238,7 +217,6 @@ textarea {
   box-sizing: border-box;
 
   padding: 0;
-
 }
 
 [type="number"]::-webkit-inner-spin-button,
@@ -250,7 +228,6 @@ textarea {
   -webkit-appearance: textfield;
 
   outline-offset: -2px;
-
 }
 
 [type="search"]::-webkit-search-cancel-button,
@@ -262,9 +239,7 @@ textarea {
   -webkit-appearance: button;
 
   font: inherit;
-
 }
-
 
 details,
 menu {
@@ -275,7 +250,6 @@ summary {
   display: list-item;
 }
 
-
 canvas {
   display: inline-block;
 }
@@ -283,7 +257,6 @@ canvas {
 template {
   display: none;
 }
-
 
 [hidden] {
   display: none;
@@ -299,7 +272,7 @@ button.__focus {
 button:active,
 button.__active {
   -ms-transform: scale(0.97);
-      transform: scale(0.97);
+  transform: scale(0.97);
 }
 ::-moz-selection {
   background-color: #75aaff;
