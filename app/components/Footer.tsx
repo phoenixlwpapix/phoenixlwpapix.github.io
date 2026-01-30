@@ -2,8 +2,8 @@ import { FaWeibo, FaWeixin, FaFacebook, FaTwitter } from 'react-icons/fa';
 
 export default function Footer() {
     return (
-        <footer className="bg-[#111] text-accent text-center py-10 text-xl">
-            <a href="mailto:liangcong224@hotmail.com" className="font-bold relative text-inherit no-underline hover:text-opacity-70 group inline-block mb-8">
+        <footer className="bg-slate-900 dark:bg-slate-950 text-accent text-center py-10 text-xl">
+            <a href="mailto:liangcong224@hotmail.com" className="font-bold relative text-inherit no-underline hover:text-orange-400 transition-colors duration-200 group inline-block mb-8">
                 liangcong224@hotmail.com
                 <span className="absolute left-0 bottom-0 w-full h-[2px] bg-accent transform scale-x-0 origin-right transition-transform duration-200 group-hover:scale-x-100 group-hover:origin-left"></span>
             </a>

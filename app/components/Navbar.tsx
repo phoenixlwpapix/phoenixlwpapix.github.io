@@ -1,60 +1,136 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleNav = () => setIsOpen(!isOpen);
     const closeNav = () => setIsOpen(false);
 
+    const navLinks = [
+        { href: '/#home', label: '首页' },
+        { href: '/#services', label: '烘焙知识' },
+        { href: '/#about', label: '自我介绍' },
+        { href: '/#work', label: '我的作品' },
+    ];
+
     return (
-        <header className={`flex justify-end p-4 relative z-50 ${isOpen ? 'nav-open' : ''}`}>
-            <button
-                className="fixed top-4 left-4 z-[1000] bg-transparent border-0 cursor-pointer p-2 md:hidden"
-                onClick={toggleNav}
-                aria-label="Toggle navigation"
+        <>
+            {/* Desktop & Mobile Floating Pill Navbar */}
+            <header 
+                className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-out
+                    ${isScrolled 
+                        ? 'top-4 w-[95%] max-w-4xl' 
+                        : 'top-6 w-[90%] max-w-3xl'
+                    }
+                `}
             >
-                <div className={`hamburger block relative bg-accent w-10 h-1 rounded transition-transform duration-250 
-          ${isOpen ? 'rotate-135' : ''}
-          before:content-[''] before:absolute before:left-0 before:right-0 before:bg-accent before:h-1 before:rounded before:transition-transform before:duration-250 before:-top-2
-          after:content-[''] after:absolute after:left-0 after:right-0 after:bg-accent after:h-1 after:rounded after:transition-transform after:duration-250 after:top-2
-          ${isOpen ? 'before:rotate-90 before:top-0 after:rotate-90 after:top-0' : ''}`}
-                ></div>
-                {/* Note: The detailed hamburger animation logic from CSS might be simpler to recreate with conditional classes or just simpler icons for now. 
-            I'll use a standard hamburger icon or the CSS logic if possible. 
-            The original CSS used pseudo-elements. 
-        */}
-            </button>
+                <div className={`
+                    relative flex items-center justify-between px-6 py-3
+                    bg-white/80 dark:bg-slate-900/80
+                    backdrop-blur-xl
+                    border border-white/20 dark:border-slate-700/50
+                    shadow-lg shadow-black/5 dark:shadow-black/20
+                    transition-all duration-500
+                    ${isScrolled 
+                        ? 'rounded-2xl' 
+                        : 'rounded-full'
+                    }
+                `}>
+                    {/* Logo */}
+                    <Link 
+                        href="/" 
+                        className="text-lg font-bold text-accent hover:scale-105 transition-transform duration-200 whitespace-nowrap"
+                    >
+                        琮琮の手作工坊
+                    </Link>
 
-            {/* 
-        Original CSS for hamburger:
-        .hamburger::before { top: 6px; }
-        .hamburger::after { bottom: 6px; }
-        Is actually a bit complex to convert exactly to tailwind utility classes without custom css.
-        I will use a simpler approach for the button visuals or rely on the custom CSS I might add back or just standard Tailwind.
-        Let's stick to a simpler reliable implementation for now.
-      */}
+                    {/* Desktop Navigation */}
+                    <nav className="hidden md:flex items-center gap-1">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.href}
+                                href={link.href}
+                                className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-accent hover:bg-accent/10 rounded-full transition-all duration-200"
+                            >
+                                {link.label}
+                            </Link>
+                        ))}
+                    </nav>
 
-            <nav className={`fixed top-0 bottom-0 left-0 right-0 bg-dark text-light transform transition-transform duration-300 ease-in-out z-40
-                ${isOpen ? 'translate-x-0' : 'translate-x-full'} 
-                md:relative md:transform-none md:translate-x-0 md:bg-transparent md:text-foreground md:flex md:justify-end md:inset-auto`}>
-                <ul className="list-none flex flex-col justify-evenly items-center h-full m-0 p-0 md:flex-row md:justify-end md:gap-8 md:h-auto">
-                    <li className="ml-0">
-                        <Link href="/#home" className="color-inherit font-bold text-xl no-underline hover:text-accent" onClick={closeNav}>首页</Link>
-                    </li>
-                    <li className="ml-0">
-                        <Link href="/#services" className="color-inherit font-bold text-xl no-underline hover:text-accent" onClick={closeNav}>烘焙知识</Link>
-                    </li>
-                    <li className="ml-0">
-                        <Link href="/#about" className="color-inherit font-bold text-xl no-underline hover:text-accent" onClick={closeNav}>自我介绍</Link>
-                    </li>
-                    <li className="ml-0">
-                        <Link href="/#work" className="color-inherit font-bold text-xl no-underline hover:text-accent" onClick={closeNav}>我的作品</Link>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={toggleNav}
+                        className="md:hidden p-2 text-foreground hover:text-accent hover:bg-accent/10 rounded-full transition-all duration-200"
+                        aria-label={isOpen ? '关闭菜单' : '打开菜单'}
+                    >
+                        {isOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
+            </header>
+
+            {/* Mobile Full Screen Menu */}
+            <div 
+                className={`fixed inset-0 z-40 md:hidden transition-all duration-300
+                    ${isOpen 
+                        ? 'opacity-100 pointer-events-auto' 
+                        : 'opacity-0 pointer-events-none'
+                    }
+                `}
+            >
+                {/* Backdrop */}
+                <div 
+                    className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                    onClick={closeNav}
+                />
+                
+                {/* Menu Panel */}
+                <nav className={`
+                    absolute top-24 left-4 right-4
+                    bg-white/95 dark:bg-slate-900/95
+                    backdrop-blur-xl
+                    border border-white/20 dark:border-slate-700/50
+                    rounded-3xl
+                    shadow-2xl
+                    p-6
+                    transition-all duration-300
+                    ${isOpen 
+                        ? 'translate-y-0 opacity-100' 
+                        : '-translate-y-4 opacity-0'
+                    }
+                `}>
+                    <ul className="flex flex-col gap-2">
+                        {navLinks.map((link, index) => (
+                            <li key={link.href}>
+                                <Link
+                                    href={link.href}
+                                    onClick={closeNav}
+                                    className="flex items-center gap-3 px-4 py-4 text-lg font-medium text-foreground hover:text-accent hover:bg-accent/10 rounded-2xl transition-all duration-200"
+                                    style={{ animationDelay: `${index * 50}ms` }}
+                                >
+                                    <span className="w-8 h-8 flex items-center justify-center bg-accent/10 text-accent rounded-full text-sm">
+                                        {index + 1}
+                                    </span>
+                                    {link.label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </div>
+        </>
     );
 }
